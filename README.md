@@ -7,7 +7,7 @@ The goal is to study the global flight network properties and investigate if the
 - Main research questions:
    - What are the key properties of the global flight network?
    - How do these network properties relate to passenger numbers at different airports?
-- Specific network properties to investigate:
+- Specific network properties to investigate(etc.):
    - Degree distribution
    - Average path length
    - Clustering coefficient
