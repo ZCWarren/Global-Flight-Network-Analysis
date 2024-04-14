@@ -1,82 +1,39 @@
-# PC5253 Final Project
-# Flight Network 
+## Predicting Airport Centrality with MLP using Passenger Data
 
-The goal is to study the global flight network properties and investigate if they are related to or predictive of passenger numbers at different airports. 
+This project demonstrates the application of a Multilayer Perceptron (MLP) to predict various centrality measures of airports using passenger data. The aim is to understand how passenger traffic influences an airport's role in the aviation network.
 
-## 1. Research Questions and Objectives
-- Main research questions:
-   - What are the key properties of the global flight network?
-   - How do these network properties relate to passenger numbers at different airports?
-- Specific network properties to investigate(etc.):
-   - Degree distribution
-   - Average path length
-   - Clustering coefficient
-   - Centrality measures
-- Objectives:
-   - Identify the most significant network properties that predict passenger numbers
-   - Develop predictive models to estimate passenger numbers based on network properties
+### Data Preparation
 
-## 2. Data Collection
-- Data sources:
-  - a. [OpenFlights](https://openflights.org)
-  - b. [SNAP: Stanford Network Analysis Project - Reachability](https://snap.stanford.edu/data/reachability.html)
-  - c. [Air Transportation Networks](http://seeslab.info/downloads/air-transportation-networks/)
-  - d. [List of busiest airports by passenger traffic (2010-2015)](https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic_(2010%E2%80%932015))
-  - e. [Top 20 busiest airports in the world](https://aci.aero/wp-content/uploads/2021/09/Top_20-busiest_airports_in-the_world_2.pdf)
+- **Features and Targets**: The passenger data (e.g., total passengers, domestic, international) serve as input features, while centrality indices (e.g., degree, closeness, betweenness) are the targets.
+- **Training and Test Split**: Data is split into 80% for training and 20% for testing.
+- **Normalization**: Input data is standardized to have zero mean and unit variance to ensure efficient training.
 
-- Data preprocessing:
-   - Handle missing or inconsistent information
-   - Organize data in a suitable format for analysis (e.g., adjacency matrix, edge list)
+### MLP Model Definition
 
-## 3. Network Analysis
-- Calculate basic network metrics:
-   - Degree distribution
-   - Average path length
-   - Clustering coefficient
-- Identify key airports (nodes) based on centrality measures:
-   - Degree centrality
-   - Betweenness centrality
-   - PageRank
-- Analyze network connectivity and resilience:
-   - Giant component size
-   - Percolation threshold
-- Investigate community structure(etc.):
-   - Louvain algorithm
-   - Infomap algorithm
+- **Framework**: Implemented using Keras.
+- **Architecture**:
+  - **Input Layer**: Size corresponds to the number of passenger data features.
+  - **Hidden Layers**: Two hidden layers, each with 64 neurons and ReLU activation.
+  - **Output Layer**: Consists of 7 neurons, each representing a centrality measure.
+- **Compilation**: The model uses the Adam optimizer and mean squared error (MSE) for loss calculation.
 
-## 4. Relationship with Passenger Numbers
-- Collect passenger number data for airports
-- Explore correlations between network metrics and passenger numbers:
-   - Pearson correlation
-   - Spearman rank correlation
-- Apply regression analysis to identify significant predictors of passenger numbers
-- Investigate temporal patterns or trends
+### Training the Model
 
-## 5. Model Development and Validation
-- Develop predictive models:
-   - Regression models
-   - Machine learning algorithms
-- Split data into training and testing sets
-- Evaluate model performance:
-   - Mean squared error
-   - R-squared
-- Perform cross-validation
+- The model is trained with passenger data as inputs and centrality indices as outputs.
+- Training involves monitoring loss on both training and validation datasets to ensure convergence and generalization.
 
-## 6. Results Interpretation and Discussion
-- Analyze results and interpret implications
-- Discuss limitations and potential sources of bias or uncertainty
-- Compare findings with previous research
-- Highlight novel insights or contributions
+### Model Evaluation
 
-## 7. Documentation and Presentation
-- Document methodology, data sources, and results
-- Create visualizations:
-   - Network graphs
-   - Scatter plots
-- Prepare report or research paper:
-   - Introduction
-   - Methods
-   - Results
-   - Discussion
-   - Conclusion
-- Present work at conferences or workshops
+- **Performance**: The trained MLP is evaluated using the test dataset with metrics such as MSE, mean absolute error (MAE), and R-squared.
+
+### Model Tuning
+
+- Adjustments can be made to the MLP’s architecture, optimizer settings, and regularization techniques to optimize performance.
+
+### Prediction
+
+- The trained model can predict the centrality of airports based on new passenger data, helping to gauge their network significance.
+
+### Conclusion
+
+Using MLP to model the relationship between passenger data and airport centrality provides valuable insights into how traffic influences an airport’s network position. This approach highlights the potential of machine learning in transportation and network analysis.
