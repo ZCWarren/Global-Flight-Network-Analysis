@@ -28,7 +28,7 @@ The goal is to study the global flight network properties and investigate if the
 
 ## 3. Network Analysis
 We employ the Kamada-Kawai layout algorithm to spatially visualize the network.
-
+<img src="/flight_network_with_eccentricity.png" alt="Flight Network" width="600" height="550">
 - Calculate basic network metrics:
    - Degree distribution
    - Average path length
