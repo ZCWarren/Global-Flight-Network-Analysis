@@ -62,4 +62,19 @@ We employ the Kamada-Kawai layout algorithm to spatially visualize the network.
 
 - **Strategic Insights**: Highlighted the potential of combining network analysis and machine learning to develop robust, adaptable strategies for the aviation industry in an increasingly interconnected world.
 
+## Usage Statement
+
+This project contains two branches:
+
+1. **main**: This branch includes Python files that calculate basic network parameters.
+2. **Passenger-relations**: This branch contains:
+   - `Passenger_network.ipynb`: Investigates flight network parameter rankings for the top 50 airports by passenger numbers.
+   - Another Jupyter Notebook file that includes the use of machine learning models to predict flight network parameters.
+
+The interpretation rights of the research findings belong to the author. Other usage conditions adhere to the MIT License. If you use the code or conclusions from this project, please cite the source.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
 
